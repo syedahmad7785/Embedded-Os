@@ -1,7 +1,6 @@
 #include<stdio.h>
 int main()
 {
-	int result =0;
-	result=add(10,20);
-	printf("addition :-%d",result);
+	printf("addition :%d",add(20,10));
+	printf("difference:%d",sub(20,10));
 }
