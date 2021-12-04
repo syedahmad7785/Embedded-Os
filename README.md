@@ -108,6 +108,24 @@
               *  The child's parent process ID is the same as the parent's process ID.
 
               *  The child does not inherit its parent's memory.
+            
+   **ZOMBIE PROCESS** :- A process which has finished the execution but still has entry in the process table to report to its
+                         parent process is known as a zombie process. 
+
+   **ORPHAN PROCESS** :-A process whose parent process no more exists i.e. either finished or terminated without waiting for 
+                        its child process to terminate is called an orphan process.
+ 
+
+   2. open():-Used to Open the file for reading, writing or both.
+
+   3. write():- Writes cnt bytes from buf to the file or socket associated with fd. cnt should not be greater than
+                 INT_MAX (defined in the limits.h header file). If cnt is zero, write() simply returns 0 without  
+                 attempting any other action.
+
+   4. read():-From the file indicated by the file descriptor fd, the read() function reads cnt bytes of input into 
+              the memory area indicated by buf. 
+  
+   5. close():-Tells the operating system you are done with a file descriptor and Close the file which pointed by fd(file descriptor).
  
    - Example of Library call are –
 
@@ -121,7 +139,7 @@
 
 # Important Terminology :-
 
-   - File Descriptor :-File descriptor is integer that uniquely identifies an open file of the process. 
+   - **File Descriptor** :-File descriptor is integer that uniquely identifies an open file of the process. 
 
    - To know more [link](https://www.geeksforgeeks.org/input-output-system-calls-c-create-open-close-read-write/)
 
@@ -129,20 +147,54 @@
    
    - PPID(Parent Process ID):-
  
-   - getpid():- returns the process ID of the calling process. This is often used by routines that generate unique temporary filenames.
+   - **getpid()**:- returns the process ID of the calling process. This is often used by routines that generate unique temporary filenames.
         
-   - **Syntax** = *pid_t getpid(void);*
+   - *Syntax* = *pid_t getpid(void);*
 
-   - getppid():-Returns the process ID of the parent of the calling process. If the calling process was created by the fork()
+   - **getppid()**:-Returns the process ID of the parent of the calling process. If the calling process was created by the fork()
 
-   - **Syntax** = *pid_t getppid(void);*
+   - *Syntax* = *pid_t getppid(void);*
 
      - Both getppid() and getpid() are inbuilt functions defined in unistd.h library
 
-   - pid_t:- pid_t Opaque data type stands for process identification and it is used to represent process ids. Whenever, we want to
+   - **pid_t**:- pid_t Opaque data type stands for process identification and it is used to represent process ids. Whenever, we want to
              declare a variable that is going to be deal with the process ids we can use pid_t data type.
    
-   - errno :- Its a global variable indicating the error occurred during any function call and defined in the header file errno.h.
+   - **errno** :- Its a global variable indicating the error occurred during any function call and defined in the header file errno.h
+  
+   - **Syscall table** :- Its table which holds the information about the system call.
+
+# Interprocess Communication
+ 
+   -  Interprocess communication is used for exchanging data between multiple threads in one or more processes or programs.
+
+## Approaches for Inter-Process Communication
+   
+   -  ![image](icon-ApproachesforIPC.png "icon")
+  
+
+   - PIPE :-Pipe is widely used for communication between two related processes. This is a half-duplex method, so the first 
+            process communicates with the second process. However, in order to achieve a full-duplex, another pipe is needed.
+ 
+   - FIFO's :-Communication between two unrelated processes. It is a full-duplex method, which means that the first process 
+              can communicate with the second process, and the opposite can also happen.
+
+## Process State :-The states that a Process enters in working from start till end are known as Process states. These are listed below as:
+
+  - Create State 
+  - Ready State
+  - Running State
+  - Watching State
+  - Exit State
+
+
+
+
+
+
+
+
+
 
 
 
