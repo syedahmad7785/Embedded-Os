@@ -179,12 +179,14 @@
    - FIFO's :-Communication between two unrelated processes. It is a full-duplex method, which means that the first process 
               can communicate with the second process, and the opposite can also happen.
 
-## Process State :-The states that a Process enters in working from start till end are known as Process states. These are listed below as:
+## Process State
+ 
+  - The states that a Process enters in working from start till end are known as Process states. These are listed below as:
 
   - Create State 
   - Ready State
   - Running State
-  - Watching State
+  - Waiting State
   - Exit State
 
 
